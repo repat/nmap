@@ -10,7 +10,7 @@
         {
             "name": "repat",
             "email": "repat@repat.de"
-        },
+        }
     ],
     "require": {
         "php": ">=7.1.3",
