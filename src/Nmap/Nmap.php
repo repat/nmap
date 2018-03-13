@@ -11,7 +11,6 @@
 namespace Nmap;
 
 use Nmap\Util\ProcessExecutor;
-use Symfony\Component\Process\ProcessUtils;
 
 /**
  * @author William Durand <william.durand1@gmail.com>
@@ -27,9 +26,9 @@ class Nmap
 
     private $enableServiceInfo = false;
 
-    private $enableVerbose     = false;
+    private $enableVerbose = false;
 
-    private $disablePortScan   = false;
+    private $disablePortScan = false;
 
     private $disableReverseDNS = false;
 
@@ -57,12 +56,12 @@ class Nmap
      */
     public function __construct(ProcessExecutor $executor = null, $outputFile = null, $executable = 'nmap')
     {
-        $this->executor   = $executor ?: new ProcessExecutor();
+        $this->executor = $executor ?: new ProcessExecutor();
         $this->outputFile = $outputFile ?: sys_get_temp_dir() . '/output.xml';
         $this->executable = $executable;
 
         // If executor returns anything else than 0 (success exit code), throw an exeption since $executable is not executable.
-        if ($this->executor->execute($this->executable.' -h') !== 0) {
+        if ($this->executor->execute($this->executable . ' -h') !== 0) {
             throw new \InvalidArgumentException(sprintf('`%s` is not executable.', $this->executable));
         }
     }
@@ -75,9 +74,7 @@ class Nmap
      */
     public function scan(array $targets, array $ports = array())
     {
-        $targets = implode(' ', array_map(function ($target) {
-            return ProcessUtils::escapeArgument($target);
-        }, $targets));
+        $targets = implode(' ', $targets);
 
         $options = array();
         if (true === $this->enableOsDetection) {
@@ -95,7 +92,7 @@ class Nmap
         if (true === $this->disablePortScan) {
             $options[] = '-sn';
         } elseif (!empty($ports)) {
-            $options[] = '-p '.implode(',', $ports);
+            $options[] = '-p ' . implode(',', $ports);
         }
 
         if (true === $this->disableReverseDNS) {
@@ -107,10 +104,10 @@ class Nmap
         }
 
         $options[] = '-oX';
-        $command   = sprintf('%s %s %s %s',
+        $command = sprintf('%s %s %s %s',
             $this->executable,
             implode(' ', $options),
-            ProcessUtils::escapeArgument($this->outputFile),
+            $this->outputFile,
             $targets
         );
 
