@@ -1,12 +1,12 @@
 nmap
 ====
 
-**nmap** is a PHP wrapper for [Nmap](http://nmap.org/), a free security scanner
-for network exploration.
+**nmap** is a PHP wrapper for [Nmap](http://nmap.org/), a free security scanner for network exploration.
 
 [![Build
 Status](https://travis-ci.org/willdurand/nmap.png?branch=master)](https://travis-ci.org/willdurand/nmap)
 
+> Updated version for symfony/process: ^4.0 and PHP 7.1+
 
 Usage
 -----
@@ -86,19 +86,19 @@ The recommended way to install nmap is through
 ``` json
 {
     "require": {
-        "willdurand/nmap": "@stable"
+        "repat/willdurand-nmap": "^0.8"
     }
 }
 ```
 
+Or:
+
+`composer require repat/willdurand-nmap`
 
 **Protip:** you should browse the
 [`willdurand/nmap`](https://packagist.org/packages/willdurand/nmap)
 page to choose a stable version to use, avoid the `@stable` meta constraint.
 
-
 License
 -------
-
-nmap is released under the MIT License. See the bundled LICENSE file for
-details.
+nmap is released under the MIT License. See the bundled LICENSE file for details.
