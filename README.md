@@ -3,8 +3,7 @@ nmap
 
 **nmap** is a PHP wrapper for [Nmap](http://nmap.org/), a free security scanner for network exploration.
 
-[![Build
-Status](https://travis-ci.org/willdurand/nmap.png?branch=master)](https://travis-ci.org/willdurand/nmap)
+[![Build Status](https://travis-ci.org/willdurand/nmap.svg?branch=master)](https://travis-ci.org/willdurand/nmap)
 
 > Updated version for symfony/process: ^4.0 and PHP 7.1+
 
