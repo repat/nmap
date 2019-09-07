@@ -6,10 +6,12 @@ use Nmap\Address;
 use Nmap\Host;
 use Nmap\Nmap;
 use Nmap\Port;
+use PHPUnit\Framework\TestCase;
 
 class NmapTest extends TestCase
 {
-    public function testScan()
+    /** @test */
+    public function scan()
     {
         $outputFile      = __DIR__ . '/Fixtures/test_scan.xml';
         $expectedCommand = sprintf("nmap -oX '%s' 'williamdurand.fr'", $outputFile);
@@ -258,7 +260,7 @@ class NmapTest extends TestCase
      */
     public function testExecutableNotExecutable()
     {
-        $executor = $this->getMock('Nmap\Util\ProcessExecutor');
+        $executor = Testcase::getMockBuilder('Nmap\Util\ProcessExecutor')->getMock();
         $executor
             ->expects($this->once())
             ->method('execute')
@@ -272,7 +274,7 @@ class NmapTest extends TestCase
      */
     private function getProcessExecutorMock()
     {
-        $executor = $this->getMock('Nmap\Util\ProcessExecutor');
+        $executor = Testcase::getMockBuilder('Nmap\Util\ProcessExecutor')->getMock();
         $executor
             ->expects($this->at(0))
             ->method('execute')

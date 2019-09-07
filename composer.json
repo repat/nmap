@@ -2,7 +2,7 @@
     "name": "repat/willdurand-nmap",
     "description": "nmap is a PHP wrapper for Nmap, a free security scanner for network exploration. Updated for PHP 7.1",
     "license": "MIT",
-    "version": "0.8.1",
+    "version": "0.8.2",
     "authors": [
         {
             "name": "William DURAND",
@@ -24,6 +24,11 @@
       "psr-4": {
           "Nmap\\": "src/Nmap/"
       }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nmap\\Test\\": "tests/NMap/Tests"
+        }
     },
     "config": {
         "bin-dir": "bin"
