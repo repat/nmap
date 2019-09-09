@@ -76,6 +76,10 @@ $nmap
     ->scan([ 'williamdurand.fr' ]);
 ```
 
+Version
+------------
+0.8.3
+
 Installation
 ------------
 
@@ -93,10 +97,6 @@ The recommended way to install nmap is through
 Or:
 
 `composer require repat/willdurand-nmap`
-
-**Protip:** you should browse the
-[`willdurand/nmap`](https://packagist.org/packages/willdurand/nmap)
-page to choose a stable version to use, avoid the `@stable` meta constraint.
 
 License
 -------
