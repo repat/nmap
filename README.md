@@ -5,7 +5,7 @@ nmap
 
 [![Build Status](https://travis-ci.org/willdurand/nmap.svg?branch=master)](https://travis-ci.org/willdurand/nmap)
 
-> Updated version for symfony/process: ^4.0 and PHP 7.1+
+> Updated version for symfony/process: ~4.0 | ~5.0 and PHP 7.1+
 
 Usage
 -----
@@ -78,7 +78,7 @@ $nmap
 
 Version
 ------------
-0.8.3
+0.9
 
 Installation
 ------------
